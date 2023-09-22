@@ -22,6 +22,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = -1
     object imgCheckPedidoFaturado: TImage
       Left = 305
       Top = 277
