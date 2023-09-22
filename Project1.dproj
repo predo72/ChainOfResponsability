@@ -108,6 +108,7 @@
             <Form>FrmFabricaDePedidos</Form>
         </DCCReference>
         <DCCReference Include="uIPedido.pas"/>
+        <DCCReference Include="uPedido.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

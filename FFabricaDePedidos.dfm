@@ -11,6 +11,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnlFabricaPedidos: TPanel
@@ -21,13 +22,9 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = 88
-    ExplicitTop = 120
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object imgCheckPedidoFaturado: TImage
-      Left = 304
-      Top = 275
+      Left = 305
+      Top = 277
       Width = 33
       Height = 33
       Picture.Data = {
@@ -72,6 +69,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
     object imgCheckPedidoSeparado: TImage
       Left = 305
@@ -120,6 +118,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
     object imgCheckPermissaoUsuario: TImage
       Left = 304
@@ -168,6 +167,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
     object imgUnCheckPermissaoUsuario: TImage
       Left = 305
@@ -213,7 +213,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         82}
       Transparent = True
     end
-    object imgCheckAprovado: TImage
+    object imgCheckPedidoAprovado: TImage
       Left = 304
       Top = 55
       Width = 33
@@ -260,8 +260,9 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
-    object imgUncheckAprovado: TImage
+    object imgUncheckPedidoAprovado: TImage
       Left = 305
       Top = 55
       Width = 33
@@ -305,7 +306,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         82}
       Transparent = True
     end
-    object imgCheckSaldoPedido: TImage
+    object imgCheckPedidoPossuiSaldo: TImage
       Left = 304
       Top = 94
       Width = 33
@@ -352,8 +353,9 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
-    object imgUncheckSaldoPedido: TImage
+    object imgUncheckPedidoPossuiSaldo: TImage
       Left = 305
       Top = 94
       Width = 33
@@ -444,6 +446,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
     object imgUncheckPedidoPago: TImage
       Left = 305
@@ -489,7 +492,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         82}
       Transparent = True
     end
-    object imgCheckEstoquePedido: TImage
+    object imgCheckPedidoPossuiEstoque: TImage
       Left = 304
       Top = 172
       Width = 33
@@ -536,8 +539,9 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
         26DE1784C0002A0F529E5EEDC8ADEB594EBC47FE3AFE179D60EC30AC8FA9C100
         00000049454E44AE426082}
       Transparent = True
+      Visible = False
     end
-    object imgUncheckEstoquePedido: TImage
+    object imgUncheckPedidoPossuiEstoque: TImage
       Left = 305
       Top = 172
       Width = 33
@@ -582,7 +586,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Transparent = True
     end
     object imgUncheckPedidoSeparado: TImage
-      Left = 304
+      Left = 305
       Top = 211
       Width = 33
       Height = 33
@@ -627,7 +631,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
     end
     object imgUncheckPedidoFaturado: TImage
       Left = 305
-      Top = 275
+      Top = 277
       Width = 33
       Height = 33
       Picture.Data = {
@@ -677,21 +681,23 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Caption = 'Faturar'
       TabOrder = 0
     end
-    object btnUsuarioSemPermissao: TButton
+    object btnUsuarioComPermissao: TButton
       Left = 15
       Top = 16
       Width = 131
       Height = 33
-      Caption = 'Usu'#225'rio Sem Permiss'#227'o'
+      Caption = 'Usu'#225'rio Com Permiss'#227'o'
       TabOrder = 1
+      OnClick = btnUsuarioComPermissaoClick
     end
-    object btnUsuarioComPermissao: TButton
+    object btnUsuarioSemPermissao: TButton
       Left = 152
       Top = 16
       Width = 131
       Height = 33
-      Caption = 'Usu'#225'rio Com Permiss'#227'o'
+      Caption = 'Usu'#225'rio Sem Permiss'#227'o'
       TabOrder = 2
+      OnClick = btnUsuarioSemPermissaoClick
     end
     object btnAprovarPedido: TButton
       Left = 15
@@ -700,6 +706,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Aprovar Pedido'
       TabOrder = 3
+      OnClick = btnAprovarPedidoClick
     end
     object btnAdicionarSaldo: TButton
       Left = 15
@@ -708,6 +715,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Adicionar Saldo'
       TabOrder = 4
+      OnClick = btnAdicionarSaldoClick
     end
     object btnReprovarPedido: TButton
       Left = 152
@@ -716,6 +724,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Reprovar Pedido'
       TabOrder = 5
+      OnClick = btnReprovarPedidoClick
     end
     object btnRemoverSaldo: TButton
       Left = 152
@@ -724,6 +733,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Remover Saldo'
       TabOrder = 6
+      OnClick = btnRemoverSaldoClick
     end
     object btnEstornarPedido: TButton
       Left = 152
@@ -732,6 +742,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Estornar Pedido'
       TabOrder = 7
+      OnClick = btnEstornarPedidoClick
     end
     object btnRemoverEstoque: TButton
       Left = 152
@@ -740,6 +751,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Remover Estoque'
       TabOrder = 8
+      OnClick = btnRemoverEstoqueClick
     end
     object btnRetornarPedido: TButton
       Left = 152
@@ -748,6 +760,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Retornar Pedido'
       TabOrder = 9
+      OnClick = btnRetornarPedidoClick
     end
     object btnPagarPedido: TButton
       Left = 15
@@ -756,6 +769,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Pagar Pedido'
       TabOrder = 10
+      OnClick = btnPagarPedidoClick
     end
     object btnAdicionarEstoque: TButton
       Left = 15
@@ -764,6 +778,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Adicionar Estoque'
       TabOrder = 11
+      OnClick = btnAdicionarEstoqueClick
     end
     object btnSepararPedido: TButton
       Left = 15
@@ -772,6 +787,7 @@ object FrmFabricaDePedidos: TFrmFabricaDePedidos
       Height = 33
       Caption = 'Separar Pedido'
       TabOrder = 12
+      OnClick = btnSepararPedidoClick
     end
   end
 end

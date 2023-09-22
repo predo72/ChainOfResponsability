@@ -1,2 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<BorlandProject/>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2023/09/21 22:39:25.338,=C:\Users\pedro\Desktop\ChainOfResponsability\Unit1.pas</Transaction>
+    <Transaction>2023/09/21 22:39:31.148,C:\Users\pedro\Desktop\ChainOfResponsability\uPedido.pas=C:\Users\pedro\Desktop\ChainOfResponsability\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
